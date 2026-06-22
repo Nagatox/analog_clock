@@ -5,12 +5,13 @@ const secondHand = document.getElementById('second-hand');
 function updateClock() {
   const now = new Date();
 
+  const millisecond = now.getMilliseconds();
   const seconds = now.getSeconds();
   const minutes = now.getMinutes();
   const hours = now.getHours();
 
   // Calculating angular positions in degrees
-  const secondDegrees = (seconds / 60) * 360;
+  const secondDegrees = ((seconds / 60) * 360) + ((millisecond/1000) * 6);
   const minuteDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6);
   const hourDegrees = ((hours % 12) / 12) * 360 + ((minutes / 60) * 30);
 
@@ -21,7 +22,7 @@ function updateClock() {
 }
 
 // Run immediately on load, then loop every second
-setInterval(updateClock, 1000);
+setInterval(updateClock, 100);
 updateClock();
 
 
