@@ -52,8 +52,8 @@ body {
 
 /* Middle decorative pin */
 .center-dot {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background-color: #a0a0a5;
   position: absolute;
   top: 50%;
